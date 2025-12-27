@@ -61,3 +61,15 @@ export PATH=$PATH:/opt/android-studio/bin
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# ALIASES
+alias nvim="lvim"
+
+# GIT 
+alias gc="git commit -m"
+alias gs="git status"
+alias gl="git log"
+alias gpl="git pull"
+alias gp="git push"
+alias gm="git merge"
+alias gcb="git checkout -b"
