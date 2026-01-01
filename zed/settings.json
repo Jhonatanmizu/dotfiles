@@ -7,22 +7,54 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "agent_ui_font_size": 14.0,
-  "ui_font_family": "FiraCode Nerd Font",
-  "buffer_font_family": "FiraCode Nerd Font",
-  "agent": {
-    "default_model": {
-      "provider": "ollama",
-      "model": "gpt-oss:20b"
-    },
-    "model_parameters": []
+  "terminal": {
+    "font_family": "MesloLGS Nerd Font",
+    "font_fallbacks": [
+      "CaskaydiaMono Nerd Font",
+      "Fira code",
+      "FiraCode Nerd Font"
+    ],
+    "max_scroll_history_lines": 0
   },
-  "icon_theme": "Material Icon Theme",
-  "ui_font_size": 15.0,
+  "project_panel": {
+    "entry_spacing": "standard",
+    "auto_fold_dirs": false
+  },
+  "base_keymap": "VSCode",
+  "minimap": {
+    "show": "never"
+  },
+  "current_line_highlight": "gutter",
+  "cursor_shape": "bar",
+  "buffer_font_fallbacks": ["MesloLGS Nerd Font", "Fira code"],
+  "buffer_font_family": "FiraCode Nerd Font",
+  "file_types": {
+    "typescriptreact": ["*.tsx"],
+    "javascript": ["*.js"],
+    "javascriptreact": ["*.jsx"],
+    "html": ["*.xml", "*.svg", "*.html", "*.django-html"],
+    "django-html": ["**/templates/**/*.html", "**/base_templates/**/*.html"],
+    "pip-requirements": ["**/requirements{/**,*}.{txt,in}"]
+  },
+  "colorize_brackets": true,
+  "linked_edits": true,
+  "wrap_guides": [80, 120],
+  "icon_theme": "Symbols Icon Theme",
+  "ui_font_size": 14,
   "buffer_font_size": 14.0,
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Dracula Solid"
+    "dark": "Tokyo Night"
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+    "selections_menu": false
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
   }
 }
