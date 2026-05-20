@@ -1,0 +1,31 @@
+id = "prisma"
+name = "Prisma"
+version = "0.1.8"
+schema_version = 1
+description = "Prisma support."
+repository = "https://github.com/zed-extensions/prisma"
+authors = ["Matthew Gramigna <matthewgramigna@gmail.com>", "Victor Quiroz <git@victorhqc.com>"]
+themes = []
+icon_themes = []
+languages = ["languages/prisma"]
+capabilities = []
+
+[lib]
+kind = "Rust"
+version = "0.7.0"
+
+[grammars.prisma]
+repository = "https://github.com/victorhqc/tree-sitter-prisma"
+rev = "3556b2c1f20ec9ac91e92d32c43d9d2a0ca3cc49"
+
+[language_servers.prisma-language-server]
+language = "Prisma"
+languages = []
+
+[language_servers.prisma-language-server.language_ids]
+
+[context_servers]
+
+[agent_servers]
+
+[slash_commands]

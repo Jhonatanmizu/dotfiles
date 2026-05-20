@@ -13,7 +13,7 @@ Software Engineer
 | **Starship** | `starship/.config/starship.toml` | Multi-line powerline prompt with Git & runtime status |
 | **Alacritty** | `alacritty/.config/alacritty.toml` | GPU-accelerated terminal with Tokyo Night Storm theme |
 | **Neovim / LunarVim** | `nvim/.config/nvim/` | 44+ plugins via lazy.nvim — LSP, DAP, Telescope, Treesitter |
-| **Zed** | `zed/settings.json` | Tokyo Night theme, VSCode keybinds, Django-aware file types |
+| **Zed** | `zed/.config/zed/settings.json` | Tokyo Night Storm theme, VSCode keybinds, Django-aware file types, agent configs |
 | **mise** | `mise/.config/mise/config.toml` | 7 runtimes: Go, Java, Node.js, Python, Ruby, Rust, uv |
 | **Git** | `git/.gitconfig` | Identity + `main` as default branch |
 | **Ulauncher** | `ulauncher/.config/ulauncher/` | Custom Tokyonight-Dark GTK theme, web shortcuts |

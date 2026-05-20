@@ -1,0 +1,23 @@
+id = "tokyo-night"
+name = "Tokyo Night Themes"
+version = "0.8.0"
+schema_version = 1
+description = "Tokyo Night Themes"
+repository = "https://github.com/ssaunderss/zed-tokyo-night"
+authors = ["ssaunderss <austinsaunders@me.com>"]
+themes = ["themes/tokyo-night.json"]
+icon_themes = []
+languages = []
+capabilities = []
+
+[lib]
+
+[grammars]
+
+[language_servers]
+
+[context_servers]
+
+[agent_servers]
+
+[slash_commands]

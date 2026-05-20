@@ -1,0 +1,54 @@
+#!/bin/bash
+set -e
+
+DOTFILES="$HOME/Developer/dotfiles"
+ZED_CONFIG="$DOTFILES/zed/.config/zed"
+ZED_EXT="$DOTFILES/zed/extensions"
+ZED_EXT_SRC="$HOME/.local/share/zed/extensions"
+
+case "${1:-push}" in
+  pull)
+    echo "⟵ Pulling dotfiles..."
+    cd "$DOTFILES" && git pull
+    echo "✓ Configs synced (symlinked to $ZED_CONFIG)"
+    echo "  Extensions may need re-install. Run: zed-sync restore-extensions"
+    ;;
+
+  push)
+    echo "⟶ Syncing extensions state..."
+    mkdir -p "$ZED_EXT"
+    cp "$ZED_EXT_SRC/index.json" "$ZED_EXT/"
+    rsync -a --delete "$ZED_EXT_SRC/installed/" "$ZED_EXT/installed/"
+    cd "$DOTFILES"
+    git add -A
+    if git diff --cached --quiet; then
+      echo "✓ Nothing to sync — no changes"
+    else
+      git commit -m "sync zed"
+      git push
+      echo "✓ Pushed to dotfiles repo"
+    fi
+    ;;
+
+  restore-extensions)
+    echo "⟳ Restoring extensions..."
+    mkdir -p "$ZED_EXT_SRC/installed"
+    rsync -a --delete "$ZED_EXT/installed/" "$ZED_EXT_SRC/installed/"
+    cp "$ZED_EXT/index.json" "$ZED_EXT_SRC/"
+    echo "✓ Extensions restored (restart Zed to apply)"
+    ;;
+
+  status)
+    cd "$DOTFILES"
+    git status --short
+    ;;
+
+  *)
+    echo "Usage: zed-sync {push|pull|restore-extensions|status}"
+    echo ""
+    echo "  push               Sync extensions state + git commit + push (default)"
+    echo "  pull               Pull latest configs from remote"
+    echo "  restore-extensions Restore extensions from dotfiles to ~/.local/share/zed/"
+    echo "  status             Show git status of dotfiles repo"
+    ;;
+esac
